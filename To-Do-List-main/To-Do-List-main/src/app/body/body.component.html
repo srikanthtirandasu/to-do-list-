@@ -1,0 +1,14 @@
+<div class="body">
+  <h4 >Todo List</h4>
+  <p>Single click to mark as completed</p>
+  <div class="ul" >
+
+    <ng-container *ngFor="let todo of todosProps" class="" >
+      <div class="ul" style="flex-direction: row; width: 100%;">
+      <li (click)="completeTodo(todo.id)"  
+      [ngStyle]="{ 'background-color': todo.isCompleted ? 'lightgreen' : 'black', 'color': todo.isCompleted ? 'green' : 'red' }">{{todo.todo}}</li>
+      <button style="position: relative; right: 40px;" (click)="deleteTodo(todo.id)">X</button>
+    </div>
+    </ng-container>
+  </div>
+</div>
